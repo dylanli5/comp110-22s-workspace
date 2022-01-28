@@ -47,4 +47,4 @@ if count >= 1:
     if count == 5:
         print("5 instances of " + character + " found in " + word)
 else:
-    print("No instance of " + character + " found in " + word)
+    print("No instances of " + character + " found in " + word)
