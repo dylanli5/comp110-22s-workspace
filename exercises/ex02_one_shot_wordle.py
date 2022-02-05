@@ -16,26 +16,26 @@ while len(guess) != 6:
     again: str = (input("That was not 6 letters! Try again: "))
     guess = again
 
-if guess != secret:
-    while i < len(guess):
-        if guess[i] == secret[i]:
-            s = s + GREEN_BOX
+while i < len(guess):
+    if guess[i] == secret[i]:
+        s = s + GREEN_BOX
+    else:
+        alternative: int = 0
+        yellow: bool = False
+
+        while yellow is False and alternative < len(secret):
+            if guess[i] == secret[alternative]:
+                yellow = True
+            alternative += 1    
+
+        if yellow is False:
+            s = s + WHITE_BOX
         else:
-            alternative: int = 0
-            yellow: bool = False
+            s = s + YELLOW_BOX
+    i += 1
 
-            while yellow is False and alternative < len(secret):
-                if guess[i] == secret[alternative]:
-                    yellow = True
-                alternative += 1    
-
-            if yellow is True:
-                s = s + YELLOW_BOX
-            else: 
-                s = s + WHITE_BOX
-        i = i + 1
-
-    print(s)
+print(s)
+if guess != secret:
     print("Not quite. Play again soon!")
 else:
     print("Woo! You got it!")
