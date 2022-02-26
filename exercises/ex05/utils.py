@@ -1,4 +1,4 @@
-"""`list` Utility Functions."""
+"""list Utility Functions."""
 
 __author__ = "730401544"
 
